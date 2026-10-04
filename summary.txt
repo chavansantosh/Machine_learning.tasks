@@ -1,0 +1,166 @@
+# CUSTOMER DEFAULT PREDICTION - PROJECT SUMMARY
+
+1. PROJECT OBJECTIVE
+
+---
+
+The objective of this project is to build a machine learning classification
+model to predict whether a customer is likely to default on a loan.
+
+Target variable:
+
+* default
+* No = Customer does not default
+* Yes = Customer defaults
+
+2. DATASET
+
+---
+
+The dataset contains customer information such as:
+
+* customer_id
+* age
+* income
+* experience_years
+* credit_score
+* loan_amount
+* city
+* education
+* employment_type
+* default
+
+3. DATA PREPROCESSING
+
+---
+
+The following preprocessing steps were performed:
+
+1. Removed customer_id because it is an identifier and does not provide
+   useful information for prediction.
+
+2. Separated the features (X) and target variable (y).
+
+3. Split the dataset into training and testing data using an 80:20 ratio.
+
+4. Used stratified splitting to maintain the class distribution in the
+   training and testing datasets.
+
+5. Identified numerical and categorical features.
+
+6. Handled numerical outliers using the IQR method and capped extreme
+   values using clipping.
+
+7. Applied StandardScaler to numerical features.
+
+8. Handled class imbalance using SMOTENC because the dataset contains
+   both numerical and categorical features.
+
+9. Applied One-Hot Encoding to categorical features so that machine
+   learning models could process them as numerical values.
+
+10. CLASS IMBALANCE
+
+---
+
+Before SMOTENC:
+
+No  = 1432
+Yes = 158
+
+After SMOTENC:
+
+No  = 1432
+Yes = 1432
+
+The test dataset was not modified or resampled.
+
+5. MODEL BUILDING
+
+---
+
+Logistic Regression was selected as the first baseline classification model.
+
+The model was trained using the processed and balanced training data.
+
+6. MODEL EVALUATION
+
+---
+
+The model was evaluated using:
+
+* Accuracy
+* Classification Report
+* Confusion Matrix
+* ROC-AUC
+
+7. RESULTS
+
+---
+
+Accuracy:
+89.20%
+
+ROC-AUC:
+94.36%
+
+Classification Report:
+
+Class       Precision   Recall   F1-Score
+No            0.98       0.90      0.94
+Yes           0.47       0.85      0.61
+
+8. CONFUSION MATRIX
+
+---
+
+[[322, 37],
+[  6, 33]]
+
+Interpretation:
+
+True Negative (TN) = 322
+False Positive (FP) = 37
+False Negative (FN) = 6
+True Positive (TP) = 33
+
+The model correctly identified 33 out of 39 actual default cases.
+
+9. KEY OBSERVATION
+
+---
+
+Although the overall accuracy is 89.20%, accuracy alone is not sufficient
+because the original dataset was imbalanced.
+
+The model achieved 85% recall for the default "Yes" class, meaning it
+identified most of the actual defaulters.
+
+The ROC-AUC score of 94.36% indicates that the model has strong ability
+to distinguish between default and non-default customers.
+
+10. CURRENT STATUS
+
+---
+
+Completed:
+
+* Data splitting
+* Outlier handling
+* Feature scaling
+* Class imbalance handling
+* Categorical encoding
+* Logistic Regression model
+* Model predictions
+* Accuracy evaluation
+* Classification report
+* Confusion matrix
+* ROC-AUC evaluation
+
+Next step:
+
+* Train additional classification models
+* Compare model performance
+* Select the best-performing model
+  ================================================
+
