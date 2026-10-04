@@ -1,0 +1,10 @@
+## Conclusion
+
+Linear Regression and Polynomial Regression models were applied to predict `Target_Deathrate` using selected socioeconomic and health-related features.
+
+The Linear Regression model achieved an MAE of 15.401, RMSE of 20.152, and R² of 0.466. Polynomial Regression with degree 2 achieved an MAE of 15.276, RMSE of 20.004, and R² of 0.474. Polynomial Regression with degree 3 achieved an MAE of 15.657, RMSE of 20.372, and R² of 0.455.
+
+Based on the test-set results, the degree-2 polynomial model had the lowest MAE, MSE, and RMSE and the highest R² among the three models. The degree-3 model did not improve the test performance compared with the linear and degree-2 models.
+
+Therefore, for this particular train/test split and selected features, the degree-2 polynomial model provided the strongest test-set performance among the models evaluated.
+
